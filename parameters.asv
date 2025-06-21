@@ -10,7 +10,7 @@ dtheta_max=10;%rad/s
 dr_min=-10;%m/s
 dr_max=10;%m/s
 b1=0.2;
-b2=0.2;
+b2=1;
 
 
 %initial conditions
@@ -22,9 +22,9 @@ r_start = 0.125; %m
 r_desired = 0.3;
 theta_desired = -pi/3;
 
-t = [0 5 60 65 120]; 
-theta_ref = [theta_start  theta_desired  theta_desired theta_start theta_start]; 
-r_ref = [r_start r_desired r_desired r_start r_start];   
+t = [0 5 15 20]; % czas zmiany pozycji [sekundy]
+theta_ref = [theta_start  theta_desired  theta_desired  theta_start]; % kąt najpierw 0, potem pi/4, potem powrót do 0
+r_ref = [r_start r_ 0.3 0.15];    % długość ramienia: najpierw krótka, potem długa, powrót
 
 % Dane do bloku From Workspace:
 theta_input = [t' theta_ref'];
